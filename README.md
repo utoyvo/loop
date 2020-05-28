@@ -1,6 +1,6 @@
 # Loop
 
-Lorem ipsum...
+Infinitely zooming pixel journey.
 
 ![Loop](screenshot.png)
 
