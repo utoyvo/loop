@@ -53,7 +53,7 @@ var app = (function() {
 	var filter_elements = $(".filtered");
 
 	var img_array     = [],
-		img_path      = "assets/img/canvas/",
+		img_path      = "public/assets/img/canvas/",
 		img_extension = "jpg";
 
 	for (var i = 1; i <= 32; i++) {

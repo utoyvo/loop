@@ -207,7 +207,8 @@ template,
 	position: fixed;
 	top: 16px;
 	left: 50%;
-	margin-left: -128px;
+	margin-left: -64px;
+	/*
 	width: 256px;
 	height: 128px;
 	background-image: url(../img/branding/brand.png);
@@ -216,6 +217,11 @@ template,
 	background-position: auto;
 	text-indent: -999em;
 	overflow: hidden;
+	*/
+	color: #f00;
+	font-size: 64px;
+	text-align: center;
+	text-shadow: 2px 2px #000;
 }
 
 /**
