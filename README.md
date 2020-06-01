@@ -2,7 +2,7 @@
 
 Infinitely zooming pixel journey.
 
-![Loop](screenshot.png)
+![Loop](screenshot.jpg)
 
 ## STRUCTURE
 ```
