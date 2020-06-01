@@ -26,11 +26,12 @@ var app = (function() {
 
 	var playback = false;
 
-	var hue = 0,
-		fx  = "sw"; // none | hueani | sw
+	var hue       = 0,
+		hue_speed = 1000,
+		fx        = "sw"; // none | hueani | sw
 
 	var slow_speed = 4,
-		fast_speed = 5,
+		fast_speed = 4,
 		portrait   = false;
 
 	var speed         = fast_speed,
@@ -254,7 +255,7 @@ var app = (function() {
 		if (fx === "none") {
 			filterNone();
 		} else if (fx === "hueani") {
-			hue += elapsed / 50;
+			hue += elapsed / hue_speed;
 
 			if (hue >= 360) {
 				hue -= 360;

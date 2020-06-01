@@ -51,8 +51,7 @@ Infinitely zooming pixel journey.
 |   |   |   |   ├── 31.jpg
 |   |   |   |   └── 32.jpg
 |   |   |   ├── covers
-|   |   |   |   ├── cover-1200x675.jpg
-|   |   |   |   └── cover-1280x800.jpg
+|   |   |   |   └── cover-1280x640.jpg
 |   |   |   └── icons
 |   |   |       ├── icon-16x16.png
 |   |   |       ├── icon-32x32.png
@@ -75,7 +74,7 @@ Infinitely zooming pixel journey.
 ├── index.html
 ├── LICENSE
 ├── README.md
-└── screenshot.png
+└── screenshot.jpg
 ```
 
 ## BUILT WITH
