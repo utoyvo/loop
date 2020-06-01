@@ -354,6 +354,7 @@ template,
 	left: 0;
 	width: 100vw;
 	height: 100vh;
+	background: #888;
 	z-index: 9;
 }
 
