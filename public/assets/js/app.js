@@ -1,4 +1,4 @@
-/*! App v1.0.0 | Klochko Oleksandr / @utoyvo | MIT License | (c) 2020 */
+/*! App v1.0.0 | Klochko Oleksandr @utoyvo | MIT License | (c) 2020 */
 var app = (function() {
 
 	window.requestAnimationFrame = window.requestAnimationFrame
@@ -53,11 +53,12 @@ var app = (function() {
 
 	var filter_elements = $(".filtered");
 
-	var img_array     = [],
+	var img_count     = 32,
+		img_array     = [],
 		img_path      = "public/assets/img/canvas/",
 		img_extension = "jpg";
 
-	for (var i = 1; i <= 32; i++) {
+	for (var i = 1; i <= img_count; i++) {
 		img_array.push(img_path + i + "." + img_extension);
 	}
 
@@ -308,7 +309,7 @@ var app = (function() {
 	var wrapper    = document.getElementById("page"),
 		idle_time  = Date.now(),
 		wrapperO   = 0,
-		fade_after = 3000;
+		fade_after = 5000;
 
 	wrapper.addEventListener("mousemove", function(e) {
 		idle_time = Date.now();
@@ -558,5 +559,87 @@ var app = (function() {
 			audio[0].play();
 		}
 	}
+
+	/**
+	 * Bounce title
+	 */
+	(function ($, window, undefined) {
+		$.fn.bounce = function (options) {
+			var settings = $.extend({
+				horizontal: true,
+				vertical:   true,
+				speed:      250, // In pixels per second
+				container:  $(this).parent(),
+				bumpEdge:   function () {
+					var newColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 50%)";
+					$('.marquee .site-title').css('color', newColor);
+				}
+			}, options);
+
+			return this.each(function () {
+				var containerWidth,
+					containerHeight,
+					elWidth,
+					elHeight,
+					move,
+					getSizes,
+					$el = $(this);
+
+				getSizes = function () {
+					containerWidth  = settings.container.outerWidth();
+					containerHeight = settings.container.outerHeight();
+					elWidth  = $el.outerWidth();
+					elHeight = $el.outerHeight();
+				};
+
+				move = {
+					right: function () {
+						$el.animate({left: (containerWidth - elWidth)}, {duration: ((containerWidth / settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
+							settings.bumpEdge();
+							move.left();
+						}});
+					},
+
+					left: function () {
+						$el.animate({left: 0}, {duration: ((containerWidth / settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
+							settings.bumpEdge();
+							move.right();
+						}});
+					},
+
+					down: function () {
+						$el.animate({top: (containerHeight - elHeight)}, {duration: ((containerHeight / settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
+							settings.bumpEdge();
+							move.up();
+						}});
+					},
+
+					up: function () {
+						$el.animate({top: 0}, {duration: ((containerHeight / settings.speed) * 1000), queue: false, easing: "linear", complete: function () {
+							settings.bumpEdge();
+							move.down();
+						}});
+					}
+				};
+
+				getSizes();
+
+				if (settings.horizontal) {
+					move.right();
+				}
+
+				if (settings.vertical) {
+					move.down();
+				}
+
+				// Make that shit responsive!
+				$(window).resize( function() {
+					getSizes();
+				});
+			});
+		};
+	})(jQuery, window);
+
+	$('#masthead').bounce();
 
 })();
