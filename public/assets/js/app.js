@@ -443,14 +443,14 @@ var app = (function() {
 		playback = !playback;
 
 		if (playback) {
-			//audio[0].play();
+			audio[0].play();
 
 			button_play.addClass("icon-pause shrink active").removeClass("icon-play pulse").attr('title', 'Pause');
 			$("body").addClass("play").removeClass("pause");
 
 			fx = "hueani";
 		} else {
-			//audio[0].pause();
+			audio[0].pause();
 			button_play.addClass("icon-play pulse").removeClass("icon-pause shrink active").attr('title', 'Play');
 
 			$("body").addClass("pause").removeClass("play");
