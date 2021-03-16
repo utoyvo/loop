@@ -434,8 +434,62 @@ var app = (function() {
 			audioVolumeMinus();
 		}
 
-		if (event.which === 122) {
-			// FullScreen
+		// Speed
+		if (event.which === 49) {
+			speed = 5;
+		}
+
+		if (event.which === 50) {
+			speed = 10;
+		}
+
+		if (event.which === 51) {
+			speed = 15;
+		}
+
+		if (event.which === 52) {
+			speed = 20;
+		}
+
+		if (event.which === 53) {
+			speed = 25;
+		}
+
+		if (event.which === 54) {
+			speed = 30;
+		}
+
+		if (event.which === 55) {
+			speed = 35;
+		}
+
+		if (event.which === 56) {
+			speed = 40;
+		}
+
+		if (event.which === 57) {
+			speed = 45;
+		}
+
+		if (event.which === 48) {
+			speed = 0;
+		}
+
+		if (event.which === 173) {
+			speed = '-' + speed;
+		}
+
+		// Colors
+		if (event.which === 78) {
+			fx = "none";
+		}
+
+		if (event.which === 72) {
+			fx = "hueani";
+		}
+
+		if (event.which === 71) {
+			fx = "sw";
 		}
 	});
 
@@ -443,14 +497,14 @@ var app = (function() {
 		playback = !playback;
 
 		if (playback) {
-			audio[0].play();
+			//audio[0].play();
 
 			button_play.addClass("icon-pause shrink active").removeClass("icon-play pulse").attr('title', 'Pause');
 			$("body").addClass("play").removeClass("pause");
 
 			fx = "hueani";
 		} else {
-			audio[0].pause();
+			//audio[0].pause();
 			button_play.addClass("icon-play pulse").removeClass("icon-pause shrink active").attr('title', 'Play');
 
 			$("body").addClass("pause").removeClass("play");
